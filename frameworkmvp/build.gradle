@@ -1,0 +1,79 @@
+apply plugin: 'com.android.library'
+
+//REALM PLUGIN
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion Integer.valueOf(compile_sdk_version)
+    buildToolsVersion "${build_tools_version}"
+
+
+    defaultConfig {
+        minSdkVersion Integer.valueOf(min_sdk_version)
+        targetSdkVersion Integer.valueOf(target_sdk_version)
+        versionCode Integer.valueOf(version_code)
+        versionName "${version_name}"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    //INCLUDE ALL JAR FROM LIBS FOLDER
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+
+    ///////////////////////////////////////
+    /////////// TEST DEPENDENCY ///////////
+    ///////////////////////////////////////
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+
+
+    ///////////////////////////////////////
+    ///////// SUPPORT DEPENDENCY //////////
+    ///////////////////////////////////////
+
+    api "com.android.support:appcompat-v7:$app_compat_version"
+    api "com.android.support:design:$app_compat_version"
+
+
+
+    ///////////////////////////////////////
+    ///////// LIBRARY DEPENDENCY //////////
+    ///////////////////////////////////////
+
+    api "com.github.rafael-juliao:android-web-service:$android_web_services_version"
+    api "com.github.rafael-juliao:android-live-model:$android_live_model_version"
+    api "com.github.rafael-juliao:android-logger:$android_logger_version"
+
+
+    //Dependency Injection Library
+    implementation "com.google.dagger:dagger:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+
+
+    //ButterKnife
+    api "com.jakewharton:butterknife:$butter_knife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butter_knife_version"
+
+
+    // Material Dialogs
+    api "com.afollestad.material-dialogs:core:$afollestad_material_dialog_version"
+}
