@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationFrameworkMVP;
-import com.lfyt.mobile.android.frameworkmvp.models.android.ServiceAPI;
 import com.squareup.otto.Subscribe;
 
 import javax.inject.Inject;

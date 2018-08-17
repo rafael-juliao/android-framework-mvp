@@ -2,13 +2,10 @@ package com.lfyt.mobile.android.frameworkmvp.archtecture;
 
 
 import com.lfyt.mobile.android.log.Logger;
-import com.lfyt.mobile.android.webservice.HttpLogInterceptor;
-import com.lfyt.mobile.android.webservice.WebServiceModel;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.model.LiveModelMVP;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.BasePresenter;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.BaseView;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.service.BackgroundServiceMVP;
-import com.lfyt.mobile.android.frameworkmvp.models.android.AndroidLiveModel;
 
 public class L extends Logger {
 
@@ -50,22 +47,10 @@ public class L extends Logger {
 		}
 
 
-		//ANDROID
-		if( caller instanceof AndroidLiveModel){
-			return "Android";
-		}
-
-
 		//SERVICE
 		if( caller instanceof BackgroundServiceMVP){
 			return "SERVICE";
 		}
-
-		//WEB SERVICE
-		if( (caller instanceof HttpLogInterceptor || caller instanceof WebServiceModel) ){
-			return "WEB";
-		}
-
 
 		return "Application";
 	}

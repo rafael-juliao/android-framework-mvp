@@ -1,15 +1,16 @@
-package com.lfyt.mobile.android.frameworkmvp.models.android;
+package com.lfyt.mobile.android.frameworkmvp.archtecture.service;
 
 import android.content.Context;
 import android.content.Intent;
 
 import com.lfyt.mobile.android.livemodel.Event;
+import com.lfyt.mobile.android.livemodel.LiveModel;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Singleton
-public class ServiceAPI extends AndroidLiveModel {
+public class ServiceAPI extends LiveModel {
 
     private Context mContext;
 

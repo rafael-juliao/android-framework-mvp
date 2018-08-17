@@ -5,7 +5,9 @@ package com.lfyt.mobile.android.frameworkmvp.archtecture.application;
  */
 
 public interface ApplicationFrameworkMVP<ApplicationComponent, ViewComponent> {
+
 	void setupDependencyInjectionComponents();
+
 	ApplicationComponent getApplicationComponent();
 	ViewComponent getViewComponent();
 }

@@ -1,8 +1,5 @@
 apply plugin: 'com.android.library'
 
-//REALM PLUGIN
-apply plugin: 'realm-android'
-
 android {
     compileSdkVersion Integer.valueOf(compile_sdk_version)
     buildToolsVersion "${build_tools_version}"
@@ -59,7 +56,6 @@ dependencies {
     ///////// LIBRARY DEPENDENCY //////////
     ///////////////////////////////////////
 
-    api "com.github.rafael-juliao:android-web-service:$android_web_services_version"
     api "com.github.rafael-juliao:android-live-model:$android_live_model_version"
     api "com.github.rafael-juliao:android-logger:$android_logger_version"
 

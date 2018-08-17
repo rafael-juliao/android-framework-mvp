@@ -1,4 +1,4 @@
-package com.lfyt.mobile.android.frameworkmvp.archtecture.application.dependency;
+package com.lfyt.mobile.android.frameworkmvp.archtecture.application;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

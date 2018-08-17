@@ -2,7 +2,7 @@ package com.lfyt.mobile.android.frameworkmvp.archtecture.service;
 
 import android.support.annotation.CallSuper;
 
-import com.lfyt.mobile.android.frameworkmvp.models.application.ApplicationLifecycleAPI;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationLifecycleAPI;
 import com.squareup.otto.Subscribe;
 
 import javax.inject.Inject;

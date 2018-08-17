@@ -1,4 +1,4 @@
-package com.lfyt.mobile.android.frameworkmvp.models.application;
+package com.lfyt.mobile.android.frameworkmvp.archtecture.application;
 
 import com.lfyt.mobile.android.livemodel.Event;
 import com.lfyt.mobile.android.livemodel.LiveModel;

@@ -1,4 +1,4 @@
-package com.lfyt.mobile.android.frameworkmvp.models.application;
+package com.lfyt.mobile.android.frameworkmvp.archtecture.application;
 
 import android.app.Activity;
 import android.app.Application;
