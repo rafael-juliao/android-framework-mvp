@@ -9,11 +9,13 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationFrameworkMVP;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.Presenter;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.implementation.ActivityView;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.implementation.DialogView;
 
 import butterknife.ButterKnife;
 
 
-class ViewMVP {
+public class ViewMVP {
 	
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -59,7 +61,7 @@ class ViewMVP {
 	// Setup Activity View
 	///////////////////////////////////////////////////////////////////////////
 	
-	void setActivityView(ActivityView activityViewMVP){
+	public void setActivityView(ActivityView activityViewMVP){
 		setupPresenterView(
 				(ViewContract) activityViewMVP,
 				((ApplicationFrameworkMVP) activityViewMVP.getApplication()));
@@ -74,8 +76,8 @@ class ViewMVP {
 	///////////////////////////////////////////////////////////////////////////
 	// Setup Fragment View
 	///////////////////////////////////////////////////////////////////////////
-	
-	View setFragmentView(Fragment fragmentView, ViewGroup container, LayoutInflater inflater){
+
+	public View setFragmentView(Fragment fragmentView, ViewGroup container, LayoutInflater inflater){
 		setupPresenterView(
 				(ViewContract) fragmentView,
 				((ApplicationFrameworkMVP) fragmentView.getActivity().getApplication())
@@ -93,8 +95,8 @@ class ViewMVP {
 	///////////////////////////////////////////////////////////////////////////
 	// Setup Dialog View
 	///////////////////////////////////////////////////////////////////////////
-	
-	MaterialDialog setDialogView(DialogView dialogView){
+
+	public MaterialDialog setDialogView(DialogView dialogView){
 
 		setupPresenterView(
 				(ViewContract) dialogView,
@@ -118,22 +120,22 @@ class ViewMVP {
 	///////////////////////////////////////////////////////////////////////////
 	// View Lifecycle
 	///////////////////////////////////////////////////////////////////////////
-	
-	void subscribe(){
+
+	public void subscribe(){
 		mPresenterMVP.executeSub();
 	}
-	
-	void start(){
+
+	public void start(){
 		mPresenterMVP.start();
 		L.D(mPresenterMVP, "STARTED");
 	}
-	
-	void stop() {
+
+	public void stop() {
 		mPresenterMVP.stop();
 		L.D(mPresenterMVP, "STOPPED");
 	}
 
-	void unsubscribe(){
+	public void unsubscribe(){
 		mPresenterMVP.executeUnsub();
 	}
 	

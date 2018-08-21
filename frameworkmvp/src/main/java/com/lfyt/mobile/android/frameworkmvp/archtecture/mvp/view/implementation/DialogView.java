@@ -1,4 +1,4 @@
-package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view;
+package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.implementation;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatDialogFragment;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.ViewMVP;
 
 /**
  * Created by rafaeljuliao on 03/04/17.

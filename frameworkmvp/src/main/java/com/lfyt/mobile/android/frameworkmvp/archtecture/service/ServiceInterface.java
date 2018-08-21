@@ -1,6 +1,6 @@
 package com.lfyt.mobile.android.frameworkmvp.archtecture.service;
 
-public interface ServiceInterfaceMVP {
+public interface ServiceInterface {
 
     void startService();
     void stopService();

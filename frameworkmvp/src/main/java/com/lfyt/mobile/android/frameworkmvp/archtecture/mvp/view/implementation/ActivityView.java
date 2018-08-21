@@ -1,8 +1,10 @@
-package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view;
+package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.implementation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.ViewMVP;
 
 public abstract class ActivityView extends AppCompatActivity{
 	

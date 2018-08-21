@@ -13,21 +13,21 @@ import com.squareup.otto.Subscribe;
 
 import javax.inject.Inject;
 
-public abstract class BackgroundServiceMVP extends Service {
+public abstract class BackgroundService extends Service {
 
 
     ///////////////////////////////////////////////////////////////////////////
     // The LiveModel that is connected to this interface
     ///////////////////////////////////////////////////////////////////////////
 
-    private ServiceInterfaceMVP ServiceInterfaceMVP;
+    private ServiceInterface ServiceInterfaceMVP;
 
 
     ///////////////////////////////////////////////////////////////////////////
     // Dependencies
     ///////////////////////////////////////////////////////////////////////////
 
-    protected abstract ServiceInterfaceMVP inject(Object component);
+    protected abstract ServiceInterface inject(Object component);
 
     @Inject ServiceAPI serviceAPI;
 

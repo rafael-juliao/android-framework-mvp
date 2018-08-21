@@ -9,16 +9,16 @@ import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationF
 
 
 /**
- * Live Model MVP is an extension of @{@link LiveModel},
+ * Model is an extension of @{@link LiveModel},
  * that can:
  * 		*post event to subscribers
  * 		*inject its dependencies and subscribe to it
  */
-public abstract class LiveModelMVP extends LiveModel {
+public abstract class Model extends LiveModel {
 
 
 
-	protected LiveModelMVP(Application application){
+	protected Model(Application application){
 
 		inject( ((ApplicationFrameworkMVP) application) );
 

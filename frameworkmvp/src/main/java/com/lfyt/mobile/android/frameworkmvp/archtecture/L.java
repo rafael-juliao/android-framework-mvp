@@ -1,11 +1,11 @@
 package com.lfyt.mobile.android.frameworkmvp.archtecture;
 
 
+import com.lfyt.mobile.android.frameworkmvp.archtecture.service.BackgroundService;
 import com.lfyt.mobile.android.log.Logger;
-import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.model.LiveModelMVP;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.model.Model;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.PresenterContract;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.ViewContract;
-import com.lfyt.mobile.android.frameworkmvp.archtecture.service.BackgroundServiceMVP;
 
 public class L extends Logger {
 
@@ -42,13 +42,13 @@ public class L extends Logger {
 
 
 		//MODEL
-		if( caller instanceof LiveModelMVP){
+		if( caller instanceof Model){
 			return "Model";
 		}
 
 
 		//SERVICE
-		if( caller instanceof BackgroundServiceMVP){
+		if( caller instanceof BackgroundService){
 			return "SERVICE";
 		}
 

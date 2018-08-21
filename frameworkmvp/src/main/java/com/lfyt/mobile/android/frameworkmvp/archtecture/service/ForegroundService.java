@@ -11,7 +11,7 @@ import javax.inject.Inject;
  * Created by rafaeljuliao on 17/05/18.
  */
 
-public abstract class ForegroundServiceMVP extends BackgroundServiceMVP {
+public abstract class ForegroundService extends BackgroundService {
 
 
 	///////////////////////////////////////////////////////////////////////////
