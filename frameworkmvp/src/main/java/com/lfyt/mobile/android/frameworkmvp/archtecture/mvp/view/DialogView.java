@@ -13,7 +13,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
  * Created by rafaeljuliao on 03/04/17.
  */
 
-public abstract class DialogViewMVP extends AppCompatDialogFragment {
+public abstract class DialogView extends AppCompatDialogFragment {
 	
 	
 	private ViewMVP viewMVP;

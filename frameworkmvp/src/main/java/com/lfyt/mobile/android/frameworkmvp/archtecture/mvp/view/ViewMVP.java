@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationFrameworkMVP;
-import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.PresenterMVP;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.Presenter;
 
 import butterknife.ButterKnife;
 
@@ -19,16 +19,16 @@ class ViewMVP {
 	///////////////////////////////////////////////////////////////////////////
 	// View Reference
 	///////////////////////////////////////////////////////////////////////////
-	private BaseView mBaseView;
+	private ViewContract mBaseView;
 	
 	
 	///////////////////////////////////////////////////////////////////////////
 	// Presenter Reference
 	///////////////////////////////////////////////////////////////////////////
-	private PresenterMVP mPresenterMVP;
+	private Presenter mPresenterMVP;
 	
 	private void setupEmptyPresenter(){
-		mPresenterMVP = new PresenterMVP()
+		mPresenterMVP = new Presenter()
 		{
 			@Override public void setupSubscriptionList() { }
 			@Override public void start() { }
@@ -42,7 +42,7 @@ class ViewMVP {
 	///////////////////////////////////////////////////////////////////////////
 
 
-	private void setupPresenterView(BaseView baseView, ApplicationFrameworkMVP applicationFrameworkMVP) {
+	private void setupPresenterView(ViewContract baseView, ApplicationFrameworkMVP applicationFrameworkMVP) {
 		mBaseView = baseView;
 
 		mPresenterMVP = mBaseView.inject(applicationFrameworkMVP);
@@ -59,9 +59,9 @@ class ViewMVP {
 	// Setup Activity View
 	///////////////////////////////////////////////////////////////////////////
 	
-	void setActivityView(ActivityViewMVP activityViewMVP){
+	void setActivityView(ActivityView activityViewMVP){
 		setupPresenterView(
-				(BaseView) activityViewMVP,
+				(ViewContract) activityViewMVP,
 				((ApplicationFrameworkMVP) activityViewMVP.getApplication()));
 
 		activityViewMVP.setContentView(mBaseView.getLayout());
@@ -77,7 +77,7 @@ class ViewMVP {
 	
 	View setFragmentView(Fragment fragmentView, ViewGroup container, LayoutInflater inflater){
 		setupPresenterView(
-				(BaseView) fragmentView,
+				(ViewContract) fragmentView,
 				((ApplicationFrameworkMVP) fragmentView.getActivity().getApplication())
 		);
 
@@ -94,10 +94,10 @@ class ViewMVP {
 	// Setup Dialog View
 	///////////////////////////////////////////////////////////////////////////
 	
-	MaterialDialog setDialogView(DialogViewMVP dialogView){
+	MaterialDialog setDialogView(DialogView dialogView){
 
 		setupPresenterView(
-				(BaseView) dialogView,
+				(ViewContract) dialogView,
 				((ApplicationFrameworkMVP) dialogView.getActivity().getApplication())
 		);
 

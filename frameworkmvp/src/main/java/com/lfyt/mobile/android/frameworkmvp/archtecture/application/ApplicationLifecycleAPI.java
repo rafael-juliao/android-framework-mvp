@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 
-@Singleton
 public final class ApplicationLifecycleAPI extends LiveModel {
 	
 	
@@ -20,8 +19,7 @@ public final class ApplicationLifecycleAPI extends LiveModel {
 	public class ApplicationStarted extends Event {}
 	public class ApplicationStopped extends Event {}
 	
-	
-	@Inject
+
 	public ApplicationLifecycleAPI(ActivityLifecycleAPI activityLifecycleAPI) {
 		L.DI(this);
 		

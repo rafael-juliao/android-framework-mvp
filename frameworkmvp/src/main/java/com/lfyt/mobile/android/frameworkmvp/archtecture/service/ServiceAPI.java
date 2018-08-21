@@ -9,12 +9,10 @@ import com.lfyt.mobile.android.livemodel.LiveModel;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
 public class ServiceAPI extends LiveModel {
 
     private Context mContext;
 
-    @Inject
     public ServiceAPI(Context context){
         mContext = context;
     }

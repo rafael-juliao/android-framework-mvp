@@ -2,11 +2,11 @@ package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter;
 
 import com.lfyt.mobile.android.livemodel.LiveModelAPI;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
-import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.BaseView;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.ViewContract;
 
-public abstract class PresenterMVP<T extends BaseView> implements BasePresenter {
+public abstract class Presenter<T extends ViewContract> implements PresenterContract {
 
-    public PresenterMVP(){
+    public Presenter(){
         L.DI(this);
     }
 

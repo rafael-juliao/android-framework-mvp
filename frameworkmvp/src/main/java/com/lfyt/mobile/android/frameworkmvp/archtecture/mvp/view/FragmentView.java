@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class FragmentViewMVP extends Fragment {
+public abstract class FragmentView extends Fragment {
 	
 	private ViewMVP viewMVP;
 	

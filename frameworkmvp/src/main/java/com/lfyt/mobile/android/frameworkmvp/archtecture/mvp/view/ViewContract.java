@@ -1,13 +1,13 @@
 package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view;
 
 import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationFrameworkMVP;
-import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.PresenterMVP;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.Presenter;
 
-public interface BaseView {
+public interface ViewContract {
 	
 	int getLayout();
 
-	PresenterMVP inject(ApplicationFrameworkMVP component);
+	Presenter inject(ApplicationFrameworkMVP component);
 	
 	void setupView();
 	

@@ -1,6 +1,6 @@
 package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter;
 
-public interface BasePresenter {
+public interface PresenterContract {
 
     void start();
     void stop();

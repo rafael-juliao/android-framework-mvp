@@ -11,11 +11,9 @@ import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
 public class ActivityLifecycleAPI extends LiveModel implements Application.ActivityLifecycleCallbacks{
 	
 
-	@Inject
 	public ActivityLifecycleAPI(Application application){
 		L.DI(this);
 		application.registerActivityLifecycleCallbacks(this);
