@@ -1,6 +1,6 @@
 package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.model;
 
-import android.app.Application;
+import android.support.annotation.CallSuper;
 
 import com.lfyt.mobile.android.livemodel.LiveModel;
 import com.lfyt.mobile.android.livemodel.LiveModelAPI;
@@ -17,35 +17,16 @@ import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationF
 public abstract class Model extends LiveModel {
 
 
-
-	protected Model(Application application){
-
-		inject( ((ApplicationFrameworkMVP) application) );
-
+	protected Model(){
 		L.DI(this);
-
-		setupSubscriptionList();
 	}
 
-
-	///////////////////////////////////////////////////////////////////////////
-	// Dependency Injection
-	///////////////////////////////////////////////////////////////////////////
-
-	protected abstract void inject(ApplicationFrameworkMVP component);
-
-
-
-
-	///////////////////////////////////////////////////////////////////////////
-	// Live Model Subscription List
-	///////////////////////////////////////////////////////////////////////////
-
-	protected abstract void setupSubscriptionList();
-
-	protected final void subscriptionList(LiveModelAPI... liveModelSubscriptionList) {
-		subscribeInLiveModelSubscritionList(liveModelSubscriptionList);
+	@CallSuper
+	protected void setupModel() {
+		subscribeInLiveModelSubscritionList(setupSubscriptionList());
 	}
+
+	protected abstract LiveModelAPI[] setupSubscriptionList();
 
 	private void subscribeInLiveModelSubscritionList(LiveModelAPI... liveModelSubscriptionList) {
 
