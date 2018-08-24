@@ -11,6 +11,7 @@ import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationF
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter.Presenter;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.implementation.ActivityView;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.implementation.DialogView;
+import com.lfyt.mobile.android.livemodel.SubscriptionList;
 
 import butterknife.ButterKnife;
 
@@ -30,11 +31,15 @@ public class ViewMVP {
 	private Presenter mPresenterMVP;
 	
 	private void setupEmptyPresenter(){
-		mPresenterMVP = new Presenter()
-		{
-			@Override public void setupSubscriptionList() { }
-			@Override public void start() { }
-			@Override public void stop() { }
+		mPresenterMVP = new Presenter(){
+			@Override
+			public void start() { }
+
+			@Override
+			public void stop() { }
+
+			@Override
+			protected void setupSubscriptionList(SubscriptionList subscriptionList) { }
 		};
 	}
 
@@ -51,7 +56,7 @@ public class ViewMVP {
 		if( mPresenterMVP == null) setupEmptyPresenter();
 
 		mPresenterMVP.setView(mBaseView);
-		mPresenterMVP.setupSubscriptionList();
+		mPresenterMVP.setupSubscription();
 
 	}
 
@@ -122,7 +127,7 @@ public class ViewMVP {
 	///////////////////////////////////////////////////////////////////////////
 
 	public void subscribe(){
-		mPresenterMVP.executeSub();
+		mPresenterMVP.subscribe();
 	}
 
 	public void start(){
@@ -136,7 +141,7 @@ public class ViewMVP {
 	}
 
 	public void unsubscribe(){
-		mPresenterMVP.executeUnsub();
+		mPresenterMVP.unsubscribe();
 	}
 	
 	

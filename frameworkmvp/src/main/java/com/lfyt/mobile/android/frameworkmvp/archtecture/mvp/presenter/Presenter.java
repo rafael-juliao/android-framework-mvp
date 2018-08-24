@@ -3,8 +3,11 @@ package com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.presenter;
 import com.lfyt.mobile.android.livemodel.LiveModelAPI;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
 import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.view.ViewContract;
+import com.lfyt.mobile.android.livemodel.SubscriptionList;
 
 public abstract class Presenter<T extends ViewContract> implements PresenterContract {
+
+    private SubscriptionList subscriptionList;
 
     public Presenter(){
         L.DI(this);
@@ -23,32 +26,25 @@ public abstract class Presenter<T extends ViewContract> implements PresenterCont
     ///////////////////////////////////////////////////////////////////////////
     // Live Model Subscription List
     ///////////////////////////////////////////////////////////////////////////
+    protected abstract void setupSubscriptionList(SubscriptionList subscriptionList);
 
-    public LiveModelAPI[] liveModelSubscriptionList;
+    public final void setupSubscription() {
+        if( subscriptionList != null) return;
 
-
-    public abstract void setupSubscriptionList();
-
-    protected final void subscriptionList(LiveModelAPI... liveModelSubscriptionList) {
-        this.liveModelSubscriptionList = liveModelSubscriptionList;
+        subscriptionList = new SubscriptionList();
+        setupSubscriptionList(subscriptionList);
     }
-
 
     ///////////////////////////////////////////////////////////////////////////
     // Helper Methods
     ///////////////////////////////////////////////////////////////////////////
-    public final void executeSub(){
-        if( liveModelSubscriptionList != null){
-            for( LiveModelAPI liveModel : liveModelSubscriptionList){
-                liveModel.subscribe(this);
-            }
-        }
+    public final void subscribe(){
+        setupSubscription();
+        subscriptionList.subscribe(this);
     }
-    public final void executeUnsub(){
-        if( liveModelSubscriptionList != null){
-            for( LiveModelAPI liveModel : liveModelSubscriptionList){
-                liveModel.unsubscribe(this);
-            }
-        }
+
+
+    public final void unsubscribe(){
+        subscriptionList.unsubscribe(this);
     }
 }
